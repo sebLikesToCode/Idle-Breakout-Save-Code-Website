@@ -1,0 +1,107 @@
+
+
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    color: #4af626;             /* Neon green header */
+    text-align: center;         /* Center the title */
+}
+
+h2 {
+    color: #4af626;             /* Neon green header */
+    text-align: center;         /* Center the title */
+}
+
+
+.card {
+    background-color: #2a2a2a;  /* Slightly lighter gray for the boxes */
+    padding: 15px;
+    margin: 15px auto;
+    max-width: 500px;
+    border-radius: 8px;         /* Smooth rounded corners */
+    border: 1px solid #444444;  /* Subtle border line */
+}
+
+label {
+    font-weight: bold;
+    color: #e0e0e0;             /* Slightly brighter white for readability */
+    font-size: 0.95em;          /* Makes the text slightly sharper */
+}
+
+input[type="text"] {
+    background-color: #1a1a1a;  /* Dark background matching the main page */
+    color: #ffffff;             /* Crisp white typing text */
+    border: 1px solid #555555;  /* Subtle grey border instead of harsh black */
+    border-radius: 4px;         /* Smooth, slightly rounded corners */
+    padding: 8px;               /* Adds breathing room inside the box so text isn't cramped */
+    margin-top: 4px;            /* Puts a tiny bit of space between the label and the box */
+    width: 100%;                /* Makes the box fill the width of the card nicely */
+    box-sizing: border-box;     /* Prevents the padding from breaking your layout widths */
+    font-family: Arial, sans-serif;
+    transition: border-color 0.2s; /* Makes the border color change smooth */
+}
+
+input[type="text"]:focus {
+    border-color: #4af626;      /* Changes the border to neon green when active */
+    outline: none;              /* Removes the ugly default blue browser outline */
+}
+
+/* Target your generate button */
+button {
+    background-color: #4af626;
+    color: #1a1a1a;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+
+
+    max-width: 500px;           /* Stretches the button to match the card size exactly */
+
+    width: 100%;                /* Tells it to fill up that max-width space */
+    margin: 30px auto;          /* Keeps it perfectly centered on the page */
+    box-sizing: border-box;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+/* Hover effect: Makes the button slightly brighter when your mouse glides over it */
+button:hover {
+    background-color: #39e015;  /* Slightly deeper green on hover */
+}
+
+/* Active effect: Makes the button visually "sink" slightly when you click down on it */
+button:active {
+    transform: scale(0.98);     /* Micro-zoom out effect that mimics a real physical button click */
+}
+
+/* Target your output save code box */
+#output {
+    background-color: #1e1e1e;   /* Deep charcoal gray for a terminal window look */
+    color: #4af626;              /* Neon green text for your code string */
+    font-family: 'Courier New', Courier, monospace; /* Clean, locked programming font */
+    padding: 15px;               /* Keeps the long code from touching the edges */
+    border-radius: 6px;          /* Smooth corners matching your cards and button */
+    border: 1px solid #333333;   /* Clean, subtle border line */
+
+    /* Layout and Alignment (Matches your cards and button perfectly!) */
+    max-width: 500px;            /* Same exact width limit as cards and button */
+    width: 100%;                 /* Spans up to that 500px boundary */
+    margin: 15px auto;           /* Centers it perfectly on the screen */
+    box-sizing: border-box;
+
+    /* Text wrapping safety (CRITICAL for long save codes!) */
+    word-break: break-all;       /* Forces the giant string to wrap to the next line instead of breaking the page */
+    white-space: pre-wrap;       /* Respects line breaks and spacing */
+
+    /* Usability trick */
+    user-select: all;            /* Automatically highlights the entire code block when clicked */
+    text-align: left;            /* Keeps the text aligned like a code file */
+}

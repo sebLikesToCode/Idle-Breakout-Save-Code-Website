@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Idle Breakout Code Generator - Sebastian L</title>
+    <link rel="stylesheet" href="cool_style.css">
+</head>
+<body>
+    <h1>Save Code Generator</h1>
+    <div class="card">
+        <h2>Main Stats</h2>
+        <div>
+            <label>Level: </label><br>
+            <input type="text" id="levelInput" value="1">
+        </div>
+        <div>
+            <label>Money: </label><br>
+            <input type="text" id="moneyInput" value="0">
+        </div>
+        <div>
+            <label>Gold: </label><br>
+            <input type="text" id="goldInput" value="0">
+        </div>
+        <div>
+            <label>Black Bricks: </label><br>
+            <input type="text" id="blackBrickInput" value="0">
+        </div>
+        <div>
+            <label>Skill Points: </label><br>
+            <input type="text" id="skillPointInput" value="0">
+        </div>
+    </div>
+    <div class="card">
+        <h2>Ball Counts</h2>
+        <div>
+            <label>Basic Ball: </label><br>
+            <input type="text" id="basicInput" value="0">
+        </div>
+        <div>
+            <label>Plasma Ball: </label><br>
+            <input type="text" id="plasmaInput" value="0">
+        </div>
+        <div>
+            <label>Sniper Ball: </label><br>
+            <input type="text" id="sniperInput" value="0">
+        </div>
+        <div>
+            <label>Scatter Ball: </label><br>
+            <input type="text" id="scatterInput" value="0">
+        </div>
+        <div>
+            <label>Cannon Ball: </label><br>
+            <input type="text" id="cannonInput" value="0">
+        </div>
+        <div>
+            <label>Poison Ball: </label><br>
+            <input type="text" id="poisonInput" value="0">
+        </div>
+    </div>
+    <div class="card">
+        <h2>Global Upgrades & Multipliers</h2>
+        <div>
+            <label>Round Complete Cash Multiplier: </label><br>
+            <input type="text" id="roundCompleteCash" value="1">
+        </div>
+        <div>
+            <label>Ball Speed Multiplier: </label><br>
+            <input type="text" id="ballSpeedMultiplier" value="1">
+        </div>
+        <div>
+            <label>Ball Power Multiplier: </label><br>
+            <input type="text" id="ballPowerMultiplier" value="1">
+        </div>
+        <div>
+            <label>VAUS Lasers: </label><br>
+            <input type="text" id="VAUS" value="1">
+        </div>
+        <div>
+            <label>Max Balls: </label><br>
+            <input type="text" id="maxBalls" value="1">
+        </div>
+    </div>
+    <div class="card">
+        <h2>Ball Upgrades</h2>
+        <div>
+            <label>Basic Ball Speed/Power: </label><br>
+            <input type="text" id="basicSpeed" value="1"><br>
+            <input type="text" id="basicPower" value="1">
+        </div>
+        <div>
+            <label>Plasma Ball Speed/Power: </label><br>
+            <input type="text" id="plasmaSpeed" value="1"><br>
+            <input type="text" id="plasmaPower" value="1">
+        </div>
+        <div>
+            <label>Sniper Ball Speed/Power: </label><br>
+            <input type="text" id="sniperSpeed" value="1"><br>
+            <input type="text" id="sniperPower" value="1">
+        </div>
+        <div>
+            <label>Scatter Ball Speed/Power: </label><br>
+            <input type="text" id="scatterSpeed" value="1"><br>
+            <input type="text" id="scatterPower" value="1">
+        </div>
+        <div>
+            <label>Cannon Ball Speed/Power: </label><br>
+            <input type="text" id="cannonSpeed" value="1"><br>
+            <input type="text" id="cannonPower" value="1">
+        </div>
+        <div>
+            <label>Poison Ball Speed/Power: </label><br>
+            <input type="text" id="poisonSpeed" value="1"><br>
+            <input type="text" id="poisonPower" value="1">
+        </div>
+    </div>
+    <div class="card">
+        <h2>Click & Laser</h2>
+        <div>
+            <label>Laser Power: </label><br>
+            <input type="text" id="laserPower" value="1">
+        </div>
+        <div>
+            <label>Click Power: </label><br>
+            <input type="text" id="clickPower" value="1">
+        </div>
+    </div>
+        <br><br>
+
+        <button onclick="generateCode()">GENERATE SAVE CODE</button>
+
+        <div id="output" style="user-select: all; font-family: monospace; color: #4af626;"></div>
+
+
+
+    <script>
+        function generateCode() {
+            // Main Stats
+            let level = document.getElementById("levelInput").value;
+            let money = document.getElementById("moneyInput").value;
+            let gold = document.getElementById("goldInput").value;
+            let bb = document.getElementById("blackBrickInput").value;
+            let skp = document.getElementById("skillPointInput").value;
+
+            // Ball Counts
+            let bsb = document.getElementById("basicInput").value;
+            let plb = document.getElementById("plasmaInput").value;
+            let sb = document.getElementById("sniperInput").value;
+            let scb = document.getElementById("scatterInput").value;
+            let cb = document.getElementById("cannonInput").value;
+            let pb = document.getElementById("poisonInput").value;
+
+            // Multipliers
+            let lccb = document.getElementById("roundCompleteCash").value;
+            let bsim = document.getElementById("ballSpeedMultiplier").value;
+            let bpm = document.getElementById("ballPowerMultiplier").value;
+            let uvl = document.getElementById("VAUS").value;
+            let mnb = document.getElementById("maxBalls").value;
+
+            // Ball Upgrades
+            let bsb_spd = document.getElementById("basicSpeed").value;
+            let bsb_pwr = document.getElementById("basicPower").value;
+            let plb_rng = document.getElementById("plasmaSpeed").value;
+            let plb_pwr = document.getElementById("plasmaPower").value;
+            let sb_spd = document.getElementById("sniperSpeed").value;
+            let sb_pwr = document.getElementById("sniperPower").value;
+            let scb_ext = document.getElementById("scatterSpeed").value;
+            let scb_pwr = document.getElementById("scatterPower").value;
+            let cb_spd = document.getElementById("cannonSpeed").value;
+            let cb_pwr = document.getElementById("cannonPower").value;
+            let pb_spd = document.getElementById("poisonSpeed").value;
+            let pb_pwr = document.getElementById("poisonPower").value;
+
+            // Click & Laser
+            let lp = document.getElementById("laserPower").value;
+            let cp = document.getElementById("clickPower").value;
+
+            let rawSaveString = `${level},${money},${gold},2,0,0,0,0,0,0,0,1,1,0,43595.78,999999,0,0,0,0,0,0,0,0,0,0,0,0,${bsb},${plb},${sb},${scb},${cb},${pb},0,0,0,${bsb_spd},${bsb_pwr},${plb_rng},${plb_pwr},${sb_spd},${sb_pwr},${scb_ext},${scb_pwr},${cb_spd},${cb_pwr},${pb_spd},${pb_pwr},0,${lp},${cp},${lccb},${bsim},${bpm},${uvl},${mnb},0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,${bb},0,0,0,1,${skp},1,0,0`;
+
+            let base64Code = btoa(rawSaveString);
+            document.getElementById("output").innerText = base64Code;
+
+        }
+    </script>
+    </div>
+</body>
+</html>
